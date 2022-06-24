@@ -1,4 +1,6 @@
-module.exports = require("knex")({
+import knex from "knex";
+
+const db = knex({
   client: "mysql",
   connection: {
     host: process.env.DB_HOST,
@@ -8,3 +10,5 @@ module.exports = require("knex")({
     port: process.env.DB_PORT,
   },
 });
+
+export default db;
